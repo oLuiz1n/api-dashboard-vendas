@@ -51,7 +51,7 @@ app.post('/vendas', async (req, res) => {
 
     res.json(novaVendaMensal);
   } catch (error) {
-    res.status(500).json({ error: error.message });
+    res.status(500).json({ error: error });
   }
 });
 
@@ -90,7 +90,7 @@ app.get('/vendas', async (req, res) => {
     res.json(filtradas);
 
   } catch (error) {
-    res.status(500).json({ error: error.message });
+    res.status(500).json({ error: error });
   }
 });
 
@@ -122,7 +122,7 @@ app.put('/vendas/:id', async (req, res) => {
 
     res.json(vendaAtualizada);
   } catch (error) {
-    res.status(500).json({ error: error.message });
+    res.status(500).json({ error: error });
   }
 });
 
