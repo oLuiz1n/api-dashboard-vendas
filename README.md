@@ -54,19 +54,19 @@ Luiz Gustavo
 ## 📸 Exemplos de requisições (CRUD): 
 
 ### ➕ POST /vendas
-![POST](./assets/POST.png)
+![POST](./assets/POST.jpg)
 
 ---
 
 ### ✏️ PUT /vendas/:id
-![UPDATE](./assets/UPDATE.png)
+![UPDATE](./assets/UPDATE.jpg)
 
 ---
 
 ### ❌ DELETE /vendas/:id
-![DELETE](./assets/DELETE.png)
+![DELETE](./assets/DELETE.jpg)
 
 ---
 
 ### 📥 GET /vendas
-![GET](./assets/GET.png)
+![GET](./assets/GET.jpg)
