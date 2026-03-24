@@ -70,3 +70,6 @@ Luiz Gustavo
 
 ### 📥 GET /vendas
 ![GET](./assets/GET.jpg)
+
+#### 📄 Exemplo de resposta
+![JSON](./assets/Exemplo_JSON.jpg)
