@@ -6,7 +6,7 @@ import VendaMensal from "./VendaMensal.js";
 
 dotenv.config();
 
-
+const uriConnect = process.env.MONGO_URI;
 const app = express();
 const PORT = 3000;
 
@@ -17,7 +17,7 @@ app.use(express.json());
 
 const connectDB = async () => {
   try {
-    await mongoose.connect(process.env.MONGO_URI);
+    await mongoose.connect(uriConnect);
     console.log('Conectado ao MongoDB');
   } catch (error) {
     console.log(' Deu erro ao conectar ao MongoDB', error);
