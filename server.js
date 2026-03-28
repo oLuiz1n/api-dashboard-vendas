@@ -8,9 +8,7 @@ dotenv.config();
 
 const uriConnect = process.env.MONGO_URI;
 const app = express();
-const PORT = 3000;
-
-// middleware - Uma função que trata as informaçãoes recebidas
+const PORT = process.env.PORT;
 
 app.use(cors());
 app.use(express.json());
@@ -26,19 +24,7 @@ const connectDB = async () => {
 
 connectDB();
 
-//CRUD
 
-// CREATE
-// app.post('/vendas', async (req, res) => {
-//   try {
-//      const { data, valor } = req.body;
-//
-//     const novaVendaMensal = await VendaMensal.create({data,valor});
-//     res.json(novaVendaMensal);
-//   } catch (error) {
-//     res.json({ error: error })
-//   }
-// });
 app.post('/vendas', async (req, res) => {
   try {
     const { data, valor } = req.body;
@@ -56,16 +42,6 @@ app.post('/vendas', async (req, res) => {
 });
 
 
-
-// READ
-// app.get('/vendas', async (req, res) => {
-//   try {
-//     const vendasMensais = await VendaMensal.find()
-//     res.json(vendasMensais);
-//   } catch (error) {
-//     res.json({ error: error })
-//   }
-// });
 app.get('/vendas', async (req, res) => {
   try {
     let { mes, ano } = req.query;
@@ -94,19 +70,7 @@ app.get('/vendas', async (req, res) => {
   }
 });
 
-// UPDATE
-// app.put('/vendas/:id', async (req, res) => {
-//   try {
-//     const novaVendaMensal = await VendaMensal.findByIdAndUpdate(
-//       req.params.id, 
-//       req.body,
-//       { new: true }
-//     );
-//     res.json(novaVendaMensal);
-//   } catch (error) {
-//     res.json({ error: error })
-//   }
-// }); 
+
 app.put('/vendas/:id', async (req, res) => {
   try {
 
@@ -126,7 +90,7 @@ app.put('/vendas/:id', async (req, res) => {
   }
 });
 
-// DELETE
+
 app.delete('/vendas/:id', async (req, res) => {
   try {
     const vendaMensalExcluida = await VendaMensal.findByIdAndDelete(
@@ -138,5 +102,5 @@ app.delete('/vendas/:id', async (req, res) => {
   }
 }); 
 
-app.listen(3000, () => console.log(`O servidor esta rodando na porta ${PORT}`));
+app.listen(PORT, () => console.log(`O servidor esta rodando`));
 
